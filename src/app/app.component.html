@@ -28,7 +28,8 @@
   </ng-template>
   <ng-template #postEdit>
     <div class="modal">
-      <post-edit class="content" [post]="selectedPost$ | async"
+      <post-edit class="content"
+                 [post]="selectedPost$ | async"
                  (postChange)="postChangeHandler($event)"
                  (close)="postEditCloseHandler()"></post-edit>
     </div>
