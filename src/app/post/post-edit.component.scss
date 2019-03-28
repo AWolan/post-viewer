@@ -1,0 +1,55 @@
+@import '../variables';
+
+.post-edit {
+  border: $borderSize solid $infoBorderColor;
+  border-radius: $borderRadius;
+  padding: $padding;
+  
+  background-color: $selectionBackgroundColor;
+  
+  button {
+    height: 30px;
+    width: 80px;
+    border: $borderSize solid;
+    border-radius: $borderRadius;
+    background-color: $fieldBackgroundColor;
+    
+    &:hover {
+      background-color: $hoverBackgroundColor;
+    }
+    
+    &.save {
+      color: $successTextColor;
+      border-color: $successBorderColor;
+    }
+    &.close {
+      color: $infoTextColor;
+      border-color: $infoBorderColor;
+    }
+  }
+  
+  textarea {
+    background-color: $fieldBackgroundColor;
+    color: $basicTextColor;
+    border: $fieldBorderSize solid;
+    border-radius: $fieldBorderRadius;
+    width: calc(100% - 2 * #{$padding});
+  }
+
+  .title {
+    color: $specialTextColor;
+    
+    textarea {
+      height: 3em;
+      border-color: $specialBorderColor;
+    }
+  }
+  .body {
+    color: $basicTextColor;
+    
+    textarea {
+      height: 7em;
+      border-color: $basicBorderColor;
+    }
+  }
+}

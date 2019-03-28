@@ -1,0 +1,18 @@
+<div class="post-edit">
+  <div class="title">
+    <label>Title:</label>
+    <textarea type="text"
+              [value]="editedPost.title"
+              (input)="editedPost.title=$event.target.value"></textarea>
+  </div>
+  <div class="body">
+    <label for="body-content">Body:</label>
+    <textarea id="body-content"
+              [value]="editedPost.body"
+              (input)="editedPost.body=$event.target.value"></textarea>
+  </div>
+  <button class="save"
+          (click)="saveClickHandler(editedPost)">Save</button>
+  <button class="close"
+          (click)="closeClickHandler()">Close</button>
+</div>

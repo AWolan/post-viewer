@@ -1,0 +1,36 @@
+<div class="app">
+  <nav class="users">
+    <div *ngIf="usersLoading$ | async; then loading; else userList"></div>
+  </nav>
+  <div class="posts">
+    <div *ngIf="postsLoading$ | async; then loading; else postList"></div>
+  </div>
+  <div *ngIf="postUpdating$ | async; then updating"></div>
+  <div *ngIf="showPostEdit$ | async; then postEdit"></div>
+  <ng-template #userList>
+    <user *ngFor="let user of users$ | async"
+          [user]="user"
+          (click)="userClickHandler(user.id)"></user>
+  </ng-template>
+  <ng-template #postList>
+    <post *ngFor="let post of posts$ | async"
+          class="item"
+          [post]="post"
+          (click)="postClickHandler(post)"></post>
+  </ng-template>
+  <ng-template #loading>
+    <div class="loading">Loading</div>
+  </ng-template>
+  <ng-template #updating>
+    <div class="modal">
+      <div class="content updating">Saving</div>
+    </div>
+  </ng-template>
+  <ng-template #postEdit>
+    <div class="modal">
+      <post-edit class="content" [post]="selectedPost$ | async"
+                 (postChange)="postChangeHandler($event)"
+                 (close)="postEditCloseHandler()"></post-edit>
+    </div>
+  </ng-template>
+</div>

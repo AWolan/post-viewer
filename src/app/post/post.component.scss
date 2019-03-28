@@ -1,0 +1,36 @@
+@import '../variables';
+
+.post {
+  border: $borderSize solid $basicBorderColor;
+  border-radius: $borderRadius;
+  margin: $margin;
+  padding: $padding;
+
+  .title {
+    color: $specialTextColor;
+    text-align: center;
+    padding-bottom: $padding;
+  }
+  .body {
+    color: $basicTextColor;
+  }
+    
+  &:hover {
+    border: $hoverBorderSize solid $hoverBorderColor;
+    background-color: $hoverBackgroundColor;
+    padding: $hoverPadding;
+  }
+    
+  &.selected {
+    border: $hoverBorderSize solid $selectionBorderColor;
+    background-color: $selectionBackgroundColor;
+    padding: $hoverPadding;
+      
+    &:hover {
+      border-color: $hoverBorderColor;
+    }
+  }
+  
+  
+}
+

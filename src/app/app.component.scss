@@ -1,0 +1,50 @@
+@import './variables';
+
+.app {
+  background-color: $backgroundColor;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    
+  .users {
+    grid-column: 1;  
+  }
+  .posts {
+    grid-column: span 2;
+  }
+    
+  .loading {
+    color: $infoTextColor;
+    text-align: center;
+    margin: auto;
+    padding: 50px;
+  }
+  .updating {
+    color: $successTextColor;
+    background-color: $backgroundColor;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    border: $borderSize solid $successBorderColor;
+    border-radius: $borderRadius;
+  }
+  .modal {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all 0.5s;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background: rgba($modalBackground, $modalBackground, $modalBackground, $modalOpacity);
+    
+    .content {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+}
